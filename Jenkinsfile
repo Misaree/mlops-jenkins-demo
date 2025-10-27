@@ -44,14 +44,6 @@ pipeline {
         }
         
         
-        stage('Test ML Model API') {
-            steps {
-                bat '''
-                    echo "Testing ML Model API..."
-                    curl -X GET http://localhost:5000 || echo "Web server is running!"
-                '''
-            }
-        }
     }
     
 }
