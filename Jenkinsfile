@@ -43,16 +43,6 @@ pipeline {
             }
         }
         
-        stage('Health Check') {
-            steps {
-                bat 'timeout /t 15 /nobreak'
-                script {
-                    bat 'docker ps'
-                    bat 'curl http://localhost:5000 || echo "🔧 Application is starting..."'
-                    bat 'docker-compose logs --tail=10'
-                }
-            }
-        }
         
         stage('Test ML Model API') {
             steps {
