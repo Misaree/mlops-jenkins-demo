@@ -7,6 +7,6 @@ services:
       - "5000:5000"
     container_name: ml-flask-app
     volumes:
-      - .:/app
+      - .:/myapp
     environment:
       - FLASK_ENV=development
